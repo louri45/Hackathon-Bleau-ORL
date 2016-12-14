@@ -42,8 +42,6 @@ class Media
      */
     private $updatedAt;
 
-    // ...
-
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;

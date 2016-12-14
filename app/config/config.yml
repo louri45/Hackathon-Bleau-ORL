@@ -73,7 +73,7 @@ fos_user:
     user_class: PickllyBundle\Entity\User
 
 easy_admin:
-    site_name: 'Pickly!'
+    site_name: 'Pickly'
     design:
             brand_color: '#ff6600'
     entities:
@@ -97,4 +97,4 @@ vich_uploader:
     mappings:
             product_images:
                 uri_prefix:         %app.path.product_images%
-                upload_destination: %kernel.root_dir%/../web/uploads/images/products
+                upload_destination: %kernel.root_dir%/../web/uploads/images/medias
