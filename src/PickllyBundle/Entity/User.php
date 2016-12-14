@@ -18,4 +18,20 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(name="points", type="integer")
+	 *
+	 */
+	private $points;
+
+	/**
+	 * @var bool
+	 *
+	 * @ORM\Column(name="status", type="boolean")
+	 *
+	 */
+	private $status;
 }
