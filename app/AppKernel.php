@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new PickllyBundle\PickllyBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+
             
             
         );
