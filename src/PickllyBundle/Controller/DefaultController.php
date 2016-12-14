@@ -14,4 +14,12 @@ class DefaultController extends Controller
     {
         return $this->render('PickllyBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/recup")
+     */
+    public function recupAction()
+    {
+        return $this->render('PickllyBundle:Default:camera.html.twig');
+    }
 }
