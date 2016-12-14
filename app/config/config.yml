@@ -8,6 +8,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app.path.product_images: /uploads/images/game
 
 framework:
     #esi:             ~
@@ -67,6 +68,33 @@ swiftmailer:
     spool:     { type: memory }
 
 fos_user:
-    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    db_driver: orm
     firewall_name: main
     user_class: PickllyBundle\Entity\User
+
+easy_admin:
+    site_name: 'Pickly'
+    design:
+            brand_color: '#ff6600'
+    entities:
+        User:
+            class: PickllyBundle\Entity\User
+        Media:
+            class: PickllyBundle\Entity\Media
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: %app.path.product_images% }
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: %app.path.product_images% }
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image' }
+
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+            product_images:
+                uri_prefix:         %app.path.product_images%
+                upload_destination: %kernel.root_dir%/../web/uploads/images/medias
