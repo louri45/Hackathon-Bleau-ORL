@@ -22,7 +22,7 @@ class User extends BaseUser
 	/**
 	 * @var int
 	 *
-	 * @ORM\Column(name="points", type="integer")
+	 * @ORM\Column(name="points", type="integer", nullable=true)
 	 *
 	 */
 	private $points;
@@ -30,8 +30,56 @@ class User extends BaseUser
 	/**
 	 * @var bool
 	 *
-	 * @ORM\Column(name="status", type="boolean")
+	 * @ORM\Column(name="status", type="boolean", nullable=true)
 	 *
 	 */
 	private $status;
+
+	
+
+    /**
+     * Set points
+     *
+     * @param integer $points
+     * @return User
+     */
+    public function setPoints($points)
+    {
+        $this->points = $points;
+
+        return $this;
+    }
+
+    /**
+     * Get points
+     *
+     * @return integer 
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    /**
+     * Set status
+     *
+     * @param boolean $status
+     * @return User
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }
