@@ -1,1 +1,93 @@
-/* YOUR CUSTOM STYLES */
+/*#475059*/
+
+body{
+    background-color:#475059;
+}
+
+.container-fluid{
+    background-color:#373d42;
+    top: 0px;
+    width: 100%;
+    height: 58px;
+}
+
+.img-circle {
+    border-radius: 90%;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    display: block;
+    margin-left: auto;
+    top: 20px;
+    position: relative;
+    margin-right: auto;
+}
+
+.cercle2{
+    background-color: #373d42;
+    border-radius: 90%;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    position: absolute;
+    bottom: 275px;
+}
+
+.cadre1{
+    height: 180px;
+    background-color: white;
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+.cadre2{
+    height: 180px;
+    background-color: white;
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    top: 5px;
+    position: relative;
+}
+
+.cadre3{
+    height: 180px;
+    background-color: white;
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+.cadre4{
+    height: 180px;
+    background-color: white;
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    top: 5px;
+    position: relative;
+}
+
+.text{
+    text-align: center;
+    top:85px;
+    position:relative;
+}
+
+.fa-user-circle, .fa-camera-retro, .fa-diamond, .fa-user-plus{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer{
+    background-color:#373d42;
+}
+
+.network{
+    color: #ffffff;
+    text-align: center;
+    font-size: 45px;
+}

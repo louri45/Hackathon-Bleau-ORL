@@ -32,4 +32,13 @@ class DefaultController extends Controller
             'user' => $user,
         ));
     }
+
+    /**
+     * @Route("/concour")
+     */
+    public function concourAction()
+    {
+        return $this->render('PickllyBundle:Default:concour.html.twig');
+    }
+
 }

@@ -1,18 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block body %}
-    <h1>Media list</h1>
+    {#<h1>Media list</h1>#}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Image</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div>
+        <div>
         {% for medium in media %}
             <tr>
                 <td><a href="{{ path('media_show', { 'id': medium.id }) }}">{{ medium.id }}</a></td>
@@ -30,8 +22,8 @@
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
+        </div>
+    </div>
 
     <ul>
         <li>
