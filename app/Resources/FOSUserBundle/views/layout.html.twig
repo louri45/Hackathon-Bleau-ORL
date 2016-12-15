@@ -1,35 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
+        <title>{% block title %}Picklly{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}">
 
-            <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
+        {% block stylesheets %}
+            <!-- Compiled and minified CSS and js and fontawsome boostrap-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% endblock %}
     </head>
     <body>
-
         <div>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %}
+            {% block header %}
+                <div class="container-fluid">
+                    <nav class="">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        {% endif %}
+
+                        {% for type, messages in app.session.flashBag.all %}
+                        {% for message in messages %}
+                        <div class="{{ type }}">
+                            {{ message|trans({}, 'FOSUserBundle') }}
+                    </nav>
+                </div>
         </div>
 
-        {% for type, messages in app.session.flashBag.all %}
-            {% for message in messages %}
-                <div class="{{ type }}">
-                    {{ message|trans({}, 'FOSUserBundle') }}
+
                 </div>
             {% endfor %}
         {% endfor %}
-
         <div>
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>
+        {% endblock %}
+
+        {% block footer %}
+            <footer>
+                <div class="navbar navbar-inverse navbar-fixed-bottom" style="border-color: red">
+                    <div class="container">
+                        <div class="navbar-collapse collapse" id="footer-body">
+                            <ul class="nav navbar-nav">
+
+                            </ul>
+                        </div>
+                        <div class="network">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
     </body>
 </html>
+
