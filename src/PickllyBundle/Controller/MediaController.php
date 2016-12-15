@@ -43,6 +43,7 @@ class MediaController extends Controller
     public function newAction(Request $request)
     {
         $medium = new Media();
+        $user = $this->getUser();
         $form = $this->createForm('PickllyBundle\Form\MediaType', $medium);
         $form->handleRequest($request);
 
@@ -55,10 +56,13 @@ class MediaController extends Controller
                 $fileName
             );
             $em = $this->getDoctrine()->getManager();
+            $medium->setUsers($user);
             $em->persist($medium);
             $em->flush($medium);
 
-            return $this->redirectToRoute('media_show', array('id' => $medium->getId()));
+            return $this->redirectToRoute('media_show', array(
+                'id' => $medium->getId(),
+            ));
         }
 
         return $this->render('media/new.html.twig', array(
