@@ -16,23 +16,20 @@ class DefaultController extends Controller
         return $this->render('PickllyBundle:Default:index.html.twig');
     }
 
-    /**
-     * @Route("/recup")
-     */
-    public function recupAction()
-    {
-        return $this->render('PickllyBundle:Default:camera.html.twig');
-    }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/classement")
+     */
     public function classementAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $user = $em->getRepository('')->findBy(array(),array('id'=>'DESC'));
+        $user = $em->getRepository('FOS')->findBy(array(),array('id'=>'DESC'));
 
 
-        return $this->render('equipe/index.html.twig', array(
-            'equipes' => $equipes,
+        return $this->render('@Picklly/Default/classement.html.twig', array(
+            'user' => $user,
         ));
     }
 }
