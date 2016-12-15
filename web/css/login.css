@@ -2,6 +2,10 @@ body{
     background-color:#475059;
 }
 
+.card{
+    background-color:#475059;
+}
+
 .container-fluid{
     background-color:#373d42;
     top: 0px;
@@ -17,4 +21,16 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.row {
+    border-left: 0px;
+    border-right: 0px;
+}
+
+label {
+    color: white;
+}
+.fa {
+    color: white;
 }

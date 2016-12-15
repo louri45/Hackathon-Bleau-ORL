@@ -4,17 +4,27 @@ namespace PickllyBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use FOS\UserBundle\Entity;
+use FOS\UserBundle\FOSUserBundle;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/")
      */
-    public function indexAction()
+    public function loginAction()
     {
+
         return $this->render('PickllyBundle:Default:index.html.twig');
     }
+
+	/**
+	 * @Route("/index")
+	 */
+	public function indexAction()
+	{
+		return $this->render('PickllyBundle:Default:index.html.twig');
+	}
 
 
     /**
@@ -41,4 +51,19 @@ class DefaultController extends Controller
         return $this->render('PickllyBundle:Default:concour.html.twig');
     }
 
+	/**
+	 * @Route("/profile", name="profile")
+	 */
+	public function profileAction()
+	{
+		return $this->render('PickllyBundle:Default:profile.html.twig');
+	}
+
+	/**
+	 * @Route("/show", name="show")
+	 */
+	public function showAction()
+	{
+		return $this->render('show.html.twig');
+	}
 }

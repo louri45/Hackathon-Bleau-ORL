@@ -1,33 +1,44 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
-    {#<h1>Media list</h1>#}
+    <h1>Media list</h1>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Photo n°</th>
+                <th>Image</th>
+                <th>Date d'upload</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
 
-    <div>
-        <div>
+        <tbody>
         {% for medium in media %}
             <tr>
                 <td><a href="{{ path('media_show', { 'id': medium.id }) }}">{{ medium.id }}</a></td>
-                <td>{{ medium.image }}</td>
+                <td><img src="{{ asset('uploads/images/medias/'~medium.image) }}" alt="image" class="imagemedia"></td>
                 <td>{% if medium.updatedAt %}{{ medium.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('media_show', { 'id': medium.id }) }}">show</a>
+                            <a class="btn-blue-grey" href="{{ path('media_show', { 'id': medium.id }) }}"><button type="button" class="btn btn-warning">Aficher l'image</button></a>
                         </li>
-                        <li>
-                            <a href="{{ path('media_edit', { 'id': medium.id }) }}">edit</a>
+                        <li style="padding-top: 10px;">
+                            <a href="{{ path('media_edit', { 'id': medium.id }) }}"><button type="button" class="btn btn-warning">Editer une photo</button></a>
                         </li>
                     </ul>
                 </td>
             </tr>
         {% endfor %}
-        </div>
-    </div>
+        </tbody>
+    </table>
 
     <ul>
         <li>
-            <a href="{{ path('media_new') }}">Create a new medium</a>
+            <a href="{{ path('media_new') }}"><button type="button" class="btn btn-warning">Ajouter une image</button>
+                </a>
         </li>
     </ul>
+</div>
 {% endblock %}

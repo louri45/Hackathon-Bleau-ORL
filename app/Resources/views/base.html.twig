@@ -8,17 +8,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}">
 
     {% block stylesheets %}
-        <!-- Compiled and minified CSS and js and fontawsome boostrap-->
+        <!-- jquery-->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- mdb -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">
+        <!-- bootstrap -->
         <script src="{{ asset('js/bootstrap.min.js')}}"></script>
         <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="{{ asset('jquery.js')}}"></script>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
-        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">#}
-        {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css">#}
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}

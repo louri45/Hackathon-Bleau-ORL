@@ -1,21 +1,30 @@
-<!-- Mixins-->
-<!-- Pen Title-->
-<head>
+{% block stylesheets %}
 
-    <style>
-        label {
-            padding-bottom: 28px;
-        }
-
-    </style>
-
-</head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <link href="{{ asset('js/mdb.min.js') }}" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
 
 
-<link href="{{ asset('css/login.css') }}" rel="stylesheet">
+
+    <!-- MDB core JavaScript -->
+
+
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mdb.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('js/tether.min.js') }}" rel="stylesheet">
+{% endblock %}
+
+<body>
 <div class="pen-title">
     <div class="circle">
-        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="..." class="img-circle">
+        <img src="{{ asset('uploads/images/medias/logo.png') }}"  alt="..." class="img-circle">
     </div>
     {% trans_default_domain 'FOSUserBundle' %}
 
@@ -25,44 +34,52 @@
 
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class=" hidden card"></div>
-            <div class="card">
-                <form action="{{ path("fos_user_security_check") }}" method="post">
-                    {% if csrf_token %}
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    {% endif %}
-                    <form>
-                        <div class="input-container">
-                            <label  for="Username">{{ 'security.login.username'|trans }}</label>
-                            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="password" id="password" name="_password" required="required" />
-                            <label  for="Password">{{ 'security.login.password'|trans }}</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="button-container">
-                            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-                        </div>
-                        <div class="footer">
-                            <input type="checkbox" id="remember_me" name="_remember_me"
-                                   value="on" />
-                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label><br/>
 
-                            <a href="{{ path('fos_user_registration_register') }}">Je n'ai pas d'espace personnel</a>
-                        </div>
-                    </form>
-                </form>
+    <div class="card-block">
+
+
+
+            <!--Header-->
+            <div class="form-header deep-orange">
+                <h3>Connection</h3>
             </div>
-        </div>
+
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% endif %}
+                        <form>
+                            <div class="input-container">
+                                <i class="fa fa-user prefix"></i>
+                                <label  for="Username">{{ 'security.login.username'|trans }}</label>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <i class="fa fa-lock prefix"></i>
+                                <label  for="Password">{{ 'security.login.password'|trans }}</label>
+                                <input type="password" id="password" name="_password" required="required" />
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                            </div>
+                            <div class="footer">
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label><br/>
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+
+
+                                <a href="{{ path('fos_user_registration_register') }}">Je n'ai pas d'espace personnel</a>
+                            </div>
+                        </form>
+                    </form>
+
+
+
     </div>
 </div>
 
-
+</body>
 {% block javascript %}
     <script>
         $('.toggle').on('click', function() {
