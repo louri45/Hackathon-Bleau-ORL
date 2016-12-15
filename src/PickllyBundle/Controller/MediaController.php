@@ -38,8 +38,7 @@ class MediaController extends Controller
      *
      * @Route("/new", name="media_new")
      * @Method({"GET", "POST"})
-     */
-    
+     */    
     public function newAction(Request $request)
     {
         $medium = new Media();
