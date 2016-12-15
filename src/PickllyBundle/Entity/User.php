@@ -41,6 +41,11 @@ class User extends BaseUser
     private $medias;
 
     /**
+     * @ORM\OneToMany(targetEntity="Game", mappedBy="users")
+     */
+    private $games;
+
+    /**
      * @return mixed
      */
     public function getMedias()
@@ -123,5 +128,28 @@ class User extends BaseUser
     public function removeMedia(\PickllyBundle\Entity\Media $medias)
     {
         $this->medias->removeElement($medias);
+    }
+
+    /**
+     * Set games
+     *
+     * @param \PickllyBundle\Entity\Game $games
+     * @return User
+     */
+    public function setGames(\PickllyBundle\Entity\Game $games = null)
+    {
+        $this->games = $games;
+
+        return $this;
+    }
+
+    /**
+     * Get games
+     *
+     * @return \PickllyBundle\Entity\Game 
+     */
+    public function getGames()
+    {
+        return $this->games;
     }
 }

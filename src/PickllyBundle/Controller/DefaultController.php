@@ -28,16 +28,13 @@ class DefaultController extends Controller
 
 
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/classement")
      */
-    public function classementAction()
-    {
+    public function classementAction()    {
+
         $em = $this->getDoctrine()->getManager();
-
-        $user = $em->getRepository('FOS')->findBy(array(),array('id'=>'DESC'));
-
-
+        $user = $em->getRepository('PickllyBundle:User')->findBy(array('status'=>'mop'), array('points'=>'DESC'));
+        
         return $this->render('@Picklly/Default/classement.html.twig', array(
             'user' => $user,
         ));
