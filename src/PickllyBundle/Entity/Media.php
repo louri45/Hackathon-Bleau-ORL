@@ -42,6 +42,11 @@ class Media
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="medias")
+     */
+    private $users;
+
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
@@ -103,4 +108,27 @@ class Media
     }
 
     
+
+    /**
+     * Set users
+     *
+     * @param \PickllyBundle\Entity\User $users
+     * @return Media
+     */
+    public function setUsers(\PickllyBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \PickllyBundle\Entity\User 
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }
