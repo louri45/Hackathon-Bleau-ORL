@@ -5,6 +5,7 @@ namespace PickllyBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use PickllyBundle\Entity\Game;
 
 /**
  * Media
@@ -46,6 +47,7 @@ class Media
      * @ORM\ManyToOne(targetEntity="User", inversedBy="medias")
      */
     private $users;
+
 
     public function setImageFile(File $image = null)
     {
