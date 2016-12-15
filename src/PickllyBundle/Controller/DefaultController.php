@@ -22,4 +22,12 @@ class DefaultController extends Controller
     {
         return $this->render('PickllyBundle:Default:camera.html.twig');
     }
+
+    /**
+     * @Route("/concour")
+     */
+    public function concourAction()
+    {
+        return $this->render('PickllyBundle:Default:concour.html.twig');
+    }
 }

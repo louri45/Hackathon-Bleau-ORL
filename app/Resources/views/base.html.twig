@@ -15,23 +15,41 @@
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}
+
 </head>
+
 <body>
-
-{% block header %}
-
-{% endblock %}
-
 {% block body %}
 
+    {% block header %}
+    <div class="container-fluid">
+        <nav class="">
+            <a href="{{ path('') }}">Accueil</a>
+            <div class="lien-menu hidden-xs">
+                <a href="{{ path('') }}" >Home &nbsp</a>
+                <a href="{{ path('') }}">Profile KIFA &nbsp</a>
+                <a href="{{ path('') }}">Classement &nbsp</a>
+                <a href="{{ path('') }}">Contact</a>
+            </div>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    {% block footer %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+        <script type="text/javascript" src=" {{ asset ('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
+    {% endblock %}
+
 {% endblock %}
 
-{% block footer %}
 
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript" src=" {{ asset ('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
-{% endblock %}
 </body>
 </html>
