@@ -1,3 +1,4 @@
+
 {% extends "FOSUserBundle::layout.html.twig" %} -
 {% block stylesheets %}
     <!-- Compiled and minified CSS and js and fontawsome boostrap-->
@@ -7,10 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 {% endblock %}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
 {% block fos_user_content %}
 {% if error %}
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
 {% endif %}
+
 
 <div class="container">
     <div class="row card">
@@ -33,5 +38,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock fos_user_content %}
