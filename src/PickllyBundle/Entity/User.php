@@ -35,7 +35,26 @@ class User extends BaseUser
 	 */
 	private $status;
 
-	
+    /**
+     * @ORM\OneToMany(targetEntity="Media", mappedBy="users")
+     */
+    private $medias;
+
+    /**
+     * @return mixed
+     */
+    public function getMedias()
+    {
+        return $this->medias;
+    }
+
+    /**
+     * @param mixed $medias
+     */
+    public function setMedias($medias)
+    {
+        $this->medias = $medias;
+    }	
 
     /**
      * Set points
@@ -81,5 +100,28 @@ class User extends BaseUser
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Add medias
+     *
+     * @param \PickllyBundle\Entity\Media $medias
+     * @return User
+     */
+    public function addMedia(\PickllyBundle\Entity\Media $medias)
+    {
+        $this->medias[] = $medias;
+
+        return $this;
+    }
+
+    /**
+     * Remove medias
+     *
+     * @param \PickllyBundle\Entity\Media $medias
+     */
+    public function removeMedia(\PickllyBundle\Entity\Media $medias)
+    {
+        $this->medias->removeElement($medias);
     }
 }

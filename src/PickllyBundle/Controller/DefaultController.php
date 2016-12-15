@@ -4,6 +4,7 @@ namespace PickllyBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\UserBundle\Entity;
 
 class DefaultController extends Controller
 {
@@ -15,12 +16,21 @@ class DefaultController extends Controller
         return $this->render('PickllyBundle:Default:index.html.twig');
     }
 
+
     /**
-     * @Route("/recup")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/classement")
      */
-    public function recupAction()
+    public function classementAction()
     {
-        return $this->render('PickllyBundle:Default:camera.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $em->getRepository('FOS')->findBy(array(),array('id'=>'DESC'));
+
+
+        return $this->render('@Picklly/Default/classement.html.twig', array(
+            'user' => $user,
+        ));
     }
 
     /**
