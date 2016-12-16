@@ -29,8 +29,23 @@ body{
 }
 
 label {
-    color: white;
+    color: #FF961F;
 }
 .fa {
-    color: white;
+    color:#FF961F;
+}
+
+#_submit{
+    background-color: #FF961F;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.bar {
+    background-color: #FF961F;
+    color: #FF961F;
+}
+
+.pen-title{
+    margin-bottom: 100px;
 }

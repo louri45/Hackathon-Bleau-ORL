@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
-{% block stysheet %}
-    <link href="{{ asset('css/indexgame.css') }}" rel="stylesheet">
-{% endblock %}
+
+{#{% block stylesheet %}#}
+    {#<link href="{{ asset('css/indexgame.css') }}" rel="stylesheet">#}
+{#{% endblock %}#}
 
 {% block body %}
 
     <div class="card-block">
-    <h1>Games list</h1>
+    <h1 class="game">Games list</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
+                <th>N°</th>
+                <th>Titre</th>
                 <th>Date</th>
-                <th>Difficulty</th>
+                <th>Difficultée</th>
                 <th>Actions</th>
             </tr>
         </thead>
