@@ -1,0 +1,40 @@
+.text {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.tuile1 {
+    background-color: deeppink;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+
+}
+
+.tuile2 {
+    background-color: darkorange;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+
+}
+
+.tuile3 {
+    background-color: royalblue;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+
+}
+
+.tuile4 {
+    background-color: forestgreen;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+
+}
+
+.icone1 {
+    margin-bottom: 300px;
+}
