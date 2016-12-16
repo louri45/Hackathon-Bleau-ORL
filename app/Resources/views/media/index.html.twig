@@ -1,44 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Media list</h1>
+    {% block header %}
+        <div class="container-fluid bare-laterale">
+        </div>
+    {% endblock %}
+    <section>
+    <h1 class="galerie">Gallerie d'image</h1>
 <div class="container">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Photo n°</th>
-                <th>Image</th>
-                <th>Date d'upload</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="image">Image</th>
+                        <th class="datedupload">Heure/Date</th>
+                    </tr>
+                </thead>
 
-        <tbody>
-        {% for medium in media %}
-            <tr>
-                <td><a href="{{ path('media_show', { 'id': medium.id }) }}">{{ medium.id }}</a></td>
-                <td><img src="{{ asset('uploads/images/medias/'~medium.image) }}" alt="image" class="imagemedia"></td>
-                <td>{% if medium.updatedAt %}{{ medium.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a class="btn-blue-grey" href="{{ path('media_show', { 'id': medium.id }) }}"><button type="button" class="btn btn-warning">Aficher l'image</button></a>
-                        </li>
-                        <li style="padding-top: 10px;">
-                            <a href="{{ path('media_edit', { 'id': medium.id }) }}"><button type="button" class="btn btn-warning">Editer une photo</button></a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <tbody>
+                {% for medium in media %}
+                    <tr>
+                        {#<td><a href="{{ path('media_show', { 'id': medium.id }) }}">{{ medium.id }}</a></td>#}
+                        <td><img src="{{ asset('uploads/images/medias/'~medium.image) }}" alt="image" class="imagemedia"></td>
+                        <td class="heur">{% if medium.updatedAt %}{{ medium.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>
+                            <ul>
+                                <div class="globale-bouton">
+                                <li style="     position: relative;
+    left: 38px;
+    top: 15px;">
+                                    <a href="{{ path('media_show', { 'id': medium.id }) }}"><button type="button" class="btn btn-warning"><i class="fa fa-picture-o" aria-hidden="true"></i></button></a>
+                                </li>
+                                <li style="padding-top: 10px position: relative;
+            left: 322px;;">
+                                    <a href="{{ path('media_edit', { 'id': medium.id }) }}"><button type="button" style="    position: relative;
+    bottom: 35px;
+    right: 52px;" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('media_new') }}"><button type="button" class="btn btn-warning">Ajouter une image</button>
-                </a>
-        </li>
-    </ul>
+            <ul>
+                <li>
+                    <a href="{{ path('media_new') }}"><button type="button" class="btn btn-warning" style="position: relative;"><i class="fa fa-upload" aria-hidden="true"></i></button>
+                        </a>
+                </li>
+        </div>
+            </ul>
 </div>
+        </section>
 {% endblock %}

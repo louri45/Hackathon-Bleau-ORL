@@ -93,5 +93,99 @@ footer{
 }
 
 .imagemedia{
-    width: 250px;
+    width: 200px;
+    padding-right: 85px;
+    position: relative;
+    left: 120px;
+}
+
+.datedupload {
+    position: relative;
+    right: 215px;
+
+}
+
+.heur{
+    position: relative;
+    right: 215px;
+    color: #ffffff;
+    top: 40px;
+}
+
+.image{
+    position: relative;
+    left: 165px;
+}
+
+.bare-laterale{
+    background-color: #373d42;
+    top: 0px;
+    width: 108%;
+    height: 58px;
+}
+
+.globale-bouton{
+    right: 200px;
+    position: relative;
+    top:130px;
+}
+
+.galerie{
+    text-align: center;
+}
+
+.cadre-concour{
+    height: 280px;
+    background-color: red;
+    width: 399px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius-top: 30px;
+    border-top: 2px solid orangered;
+    margin-top: 45px;
+}
+
+.text-cadre {
+        text-align: center;
+        position: relative;
+        top: 40px;
+        font-size: 1.5em;
+
+}
+
+.image-concour{
+    width: 500px;
+    position: relative;
+}
+
+.cadre2{
+    height: 100px;
+    background-color: pink;
+    width: 295px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 78px;
+    background-color:#ffffff;
+
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+}
+
+.image-concour-travel{
+    width: 600px;
+    position: relative;
+}
+
+.image-concour-concer{
+    width: 550px;
+    position: relative;
 }
