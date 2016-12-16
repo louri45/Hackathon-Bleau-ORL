@@ -6,9 +6,43 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="circle">
-        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="..." class="img-circle">
+    <div class="navmarge">
+        <div class="circle">
+            <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="..." class="img-circle">
+        </div>
+        {% for game in games %}
+            <div class="cadre-concour">
+                <img src="{{ asset('/uploads/images/medias/'~game.image) }}"
+                     class="image-concour" alt="">
+            </div>
+            <div class="cadre2">
+                <h2 CLASS="text-cadre">{{ game.title }}</h2>
+                <button onClick="javascript:location.href='{{ path('game_index')~game.id }}'" type="button" class="btn btn-warning">Participer</button>
+            </div>
+        {% endfor %}
     </div>
+{% endblock %}
 
+{% block footer %}
+<footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-body">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="footer-bar-btns visible-xs list-unstyled list-inline">
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
 {% endblock %}
