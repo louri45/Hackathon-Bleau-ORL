@@ -24,25 +24,24 @@
 {% endblock %}
 
 {% block footer %}
-<footer>
-    <div class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container">
-            <div class="navbar-collapse collapse" id="footer-body">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-body">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <ul class="footer-bar-btns visible-xs list-unstyled list-inline">
+    <footer>
+        <div class="navbar navbar-inverse navbar-fixed-bottom" >
+            <div class="container">
+                <div class="navbar-collapse collapse" id="footer-body">
+                    <ul class="nav navbar-nav">
+                        <li><a class="white" href="{{ path('fos_user_profile_edit') }}">Account Settings</a></li>
+                        <li><a class="white" href="{{ path('fos_user_security_logout') }}">Log Out</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-header">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href ="{{ path('index_home') }}"><i class="fa fa-home" aria-hidden="true"></i><a href>
+                </div>
 
-                </ul>
             </div>
-
         </div>
-    </div>
-</footer>
+    </footer>
 {% endblock %}
