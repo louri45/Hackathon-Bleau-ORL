@@ -3,7 +3,7 @@
 {% block header %}
 
         <div class="circle">
-            <img src="{{ asset('uploads/images/medias/logo.png') }}"  alt="..." class="img-circle">
+            <img src="{{ asset('uploads/images/medias/logo2.svg') }}"  alt="..." class="img-circle">
         </div>
 
 
@@ -16,21 +16,22 @@
             <div class="col-xs-6">
                 <div class="globalecadre">
                     <a href="{{ path('show') }}"><div class="cadre1 tuile1">
-                            <span class="icone1"><h3 class="text"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>Profile</h3></span>
+                            <span class="icone1"><h3 class="text"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>Profil</h3></span>
                     </div></a>
-                    <div class="cadre2 tuile2">
-                        <h3 class="text"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>Prise de photo</h3>
-                    </div>
+                    <a href="{{ path('game_index') }}"><div class="cadre2 tuile2">
+                        <h3 class="text"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i>Lancer une
+                            partie</h3>
+                        </div></a>
                 </div>
             </div>
             <div class="col-xs-6">
                 <div class="globalecadre2">
-                    <div class="cadre3 tuile3">
+                    <a href="{{ path('classement') }}"><div class="cadre3 tuile3">
                         <h3 class="text"><i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>Classement</h3>
-                    </div>
-                    <div class="cadre4 tuile4">
+                    </div><a/>
+                        <a href="{{ path('concours') }}"><div class="cadre4 tuile4">
                         <h3 class="text"><i class="fa fa-diamond fa-2x" aria-hidden="true"></i>Concours</h3>
-                    </div>
+                    </div><a/>
                 </div>
             </div>
         </div>

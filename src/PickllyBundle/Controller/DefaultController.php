@@ -29,7 +29,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/classement")
+     * @Route("/classement", name="classement")
      */
     public function classementAction()    {
 
@@ -42,7 +42,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/concour")
+     * @Route("/concour", name="concours")
      */
     public function concourAction()
     {
