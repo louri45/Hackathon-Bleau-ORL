@@ -11,7 +11,7 @@ use PickllyBundle\Entity;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/",  name="index_home")
      */
     public function loginAction()
     {

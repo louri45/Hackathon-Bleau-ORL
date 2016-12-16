@@ -192,3 +192,12 @@ footer{
 .navmarge{
     margin-bottom: 100px;
 }
+
+.fa-home{
+    color: white;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.5em;
+}
