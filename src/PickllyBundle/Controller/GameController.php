@@ -175,4 +175,5 @@ private function listingAction()
             'games' => $games,
         ));
     }
+    
 }

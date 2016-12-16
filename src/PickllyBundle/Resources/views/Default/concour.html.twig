@@ -6,54 +6,21 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="circle">
-        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="..." class="img-circle">
+    <div class="navmarge">
+        <div class="circle">
+            <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="..." class="img-circle">
+        </div>
+        {% for game in games %}
+            <div class="cadre-concour">
+                <img src="{{ asset('/uploads/images/medias/'~game.image) }}"
+                     class="image-concour" alt="">
+            </div>
+            <div class="cadre2">
+                <h2 CLASS="text-cadre">{{ game.title }}</h2>
+                <button onClick="javascript:location.href='{{ path('game_index')~game.id }}'" type="button" class="btn btn-warning">Participer</button>
+            </div>
+        {% endfor %}
     </div>
-
-
-            <div class="cadre-concour">
-                <img src="http://www.magcentre.fr/wp-content/uploads/2016/06/IMG_7682.jpg"
-                     class="image-concour" alt="">
-            </div>
-            <div class="cadre2">
-                <h2 CLASS="text-cadre">Lieux</h2>
-                <button type="button" class="btn btn-warning">Participer</button>
-            </div>
-            <div class="cadre-concour">
-                <img src="http://www.aflyon.org/medias/cuisine/vinsetgastronomie.gif"
-                     class="image-concour" alt="">
-            </div>
-            <div class="cadre2">
-                <h2 CLASS="text-cadre">Gastronomie</h2>
-                <button type="button" class="btn btn-warning">Participer</button>
-            </div>
-            <div class="cadre-concour">
-                <img src="https://www.optic2000.com/media/magazine/Intro_LookBook.png"
-                     class="image-concour" alt="">
-            </div>
-            <div class="cadre2">
-                <h2 CLASS="text-cadre">Ray Ban</h2>
-                <button type="button" class="btn btn-warning">Participer</button>
-            </div>
-            <div class="cadre-concour">
-                <img src="http://www.voyagesturquieistanbul.com/images/slide3.jpg"
-                     class="image-concour-travel" alt="">
-            </div>
-            <div class="cadre2">
-                <h2 CLASS="text-cadre">Voyage</h2>
-                <button type="button" class="btn btn-warning">Participer</button>
-            </div>
-            <div class="cadre-concour">
-                <img src="http://media.virginradio.fr/article-3207034-fb/coldplay-concert-a-head-full-of-dreams-tour.jpg"
-                     class="image-concour-concer" alt="">
-            </div>
-            <div class="cadre2">
-                <h2 CLASS="text-cadre">Concert</h2>
-                <button type="button" class="btn btn-warning">Participer</button>
-            </div>
-
-
 {% endblock %}
 
 {% block footer %}
