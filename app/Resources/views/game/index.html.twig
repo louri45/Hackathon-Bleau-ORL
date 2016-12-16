@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
+{% block stysheet %}
+    <link href="{{ asset('css/indexgame.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block body %}
+
+    <div class="card-block">
     <h1>Games list</h1>
 
     <table>
@@ -37,7 +42,11 @@
 
     <ul>
         <li>
-            <a href="{{ path('game_new') }}">Create a new game</a>
+            <a class="btn btn-warning" href="{{ path('game_new') }}">Create a new game</a>
         </li>
     </ul>
+
+
+    </div>
+
 {% endblock %}
